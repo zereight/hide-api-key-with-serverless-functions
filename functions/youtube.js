@@ -20,18 +20,20 @@ exports.handler = async (event) => {
     const response = await fetch(URI);
     const json = await response.json();
 
-    return {
-      statusCode: 200,
-      ok: true,
-      headers,
-      body: JSON.stringify(json),
-    };
+    return response;
+    // {
+    //   statusCode: 200,
+    //   ok: true,
+    //   headers,
+    //   body: JSON.stringify(json),
+    // };
   } catch (error) {
-    return {
-      statusCode: 404,
-      statusText: error.message,
-      ok: false,
-      headers,
-    };
+    return response;
+    //  {
+    //   statusCode: 404,
+    //   statusText: error.message,
+    //   ok: false,
+    //   headers,
+    // };
   }
 };
